@@ -6,6 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
+    "alias": "cd ./dist && now alias",
+    "deploy": "yarn build && now ./dist -p",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
