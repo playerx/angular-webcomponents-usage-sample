@@ -1,24 +1,61 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<mat-toolbar class=primary
+             color=primary>
+  <button mat-button
+          (click)="refresh()">
+    <mat-icon>home</mat-icon>
+    Home
+  </button>
+  <span class=spacer></span>
+  <button mat-button
+          (click)="openGithub()">
+    <mat-icon>code</mat-icon>
+    Github
+  </button>
+</mat-toolbar>
+<br/>
+<div class=textCenter>
   <h1>
     <img alt="Angular Logo"
          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-    <span>Welcome to {{ title }}!</span>
+    <span>Web Components: In our app!</span>
   </h1>
 </div>
-<h2>Here are some links to help you start: </h2>
-<button mat-button
-        [disabled]=!!loadingInfo
-        color=primary
-        (click)="loadWebComponentsModule()">
-  Load Module
-</button>
-<app-like-button likes=0>
-  This is app-like-button
-</app-like-button>
-<hr />
-<app-module-shell>
-  Module shell will be loaded here
-  <br/>
-  <br/> {{loadingInfo}}
-</app-module-shell>
+<br/>
+<mat-card>
+  <h2>Info: </h2>
+  <p>
+    This application demonstrates how to load remote web components dynamically.
+    <br/> We are going to use two different web components:
+  </p>
+  <ul>
+    <li>app-like-button</li>
+    <li>app-module-shell</li>
+  </ul>
+  <br/> Btw web components are created with angular also, check out url where its hosted:
+  <a mat-button
+     color=primary
+     href="https://angular-elements-sample.now.sh/"
+     target="blank">https://angular-elements-sample.now.sh/</a>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <app-like-button likes=0>
+      This is app-like-button
+    </app-like-button>
+    <span class=spacer></span>
+    <button mat-raised-button
+            [disabled]=!!loadingInfo
+            color=primary
+            (click)="loadWebComponentsModule()">
+      Load Module
+    </button>
+  </mat-card-header>
+
+  <hr />
+  <app-module-shell>
+    Module shell will be loaded here
+    <br/>
+    <br/> {{loadingInfo}}
+  </app-module-shell>
+</mat-card>

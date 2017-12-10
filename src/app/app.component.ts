@@ -15,6 +15,7 @@ export class AppComponent {
     await this.loadScript(`${rootUrl}/inline.bundle.js`);
     await this.loadScript(`${rootUrl}/vendor.bundle.js`);
     await this.loadScript(`${rootUrl}/main.bundle.js`);
+    // await this.loadScript(`${rootUrl}/styles.bundle.css`);
   }
 
   private async loadScript(url) {
@@ -26,5 +27,12 @@ export class AppComponent {
       script.onload = () => resolve();
       document.body.appendChild(script);
     });
+  }
+
+  refresh() {
+    window.location.reload();
+  }
+  openGithub() {
+    window.open('https://github.com/playerx/angular-webcomponents-usage-sample');
   }
 }

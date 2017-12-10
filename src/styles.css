@@ -1,1 +1,8 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+body {
+	margin: 0;
+	background: #f5f5f5;
+}
