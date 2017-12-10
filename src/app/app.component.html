@@ -56,12 +56,13 @@
 
 <mat-card>
   <mat-card-header>
+    <span class=spacer></span>
     <app-like-button likes=0>
       This is app-like-button
     </app-like-button>
-    <span class=spacer></span>
     <button mat-raised-button
             [disabled]=!!loadingInfo
+            class=loadModule
             color=primary
             (click)="loadWebComponentsModule()">
       Load Module
